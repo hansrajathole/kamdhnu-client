@@ -1,76 +1,32 @@
 import React, { useState } from 'react';
+import {products} from '../../data/products';
+import { useNavigate , useLocation , useParams } from 'react-router-dom';
 import { ArrowLeft, Star, Heart, Share2, ShoppingCart, Plus, Minus, Truck, Shield, RefreshCw } from 'lucide-react';
 
 const ProductDetailPage = () => {
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
   const [isWishlisted, setIsWishlisted] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  let {id} = useParams()
+
+
+  console.log(id);
+  
 
   // Sample product data (this would typically come from props or API)
-  const product = {
-    id: 1,
-    name: "A2 Desi Cow Milk",
-    price: 70,
-    originalPrice: 85,
-    unit: "per liter",
-    rating: 4.8,
-    reviews: 124,
-    description: "Premium-quality A2 Desi Cow Milk sourced with care. Enjoy freshness and authentic taste, perfect for everyday nutrition and cooking.",
-    images: [
-      "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=500&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=500&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=500&h=500&fit=crop"
-    ],
-    features: [
-      "100% Pure A2 Protein",
-      "Farm Fresh Daily",
-      "No Preservatives",
-      "Rich in Nutrients",
-      "Ethically Sourced"
-    ],
-    nutritionalInfo: {
-      protein: "3.2g",
-      fat: "3.8g",
-      carbs: "4.7g",
-      calcium: "120mg",
-      calories: "64"
-    }
-  };
+  const product = products.find((item) => String(item.id) === String(id));
 
-  const similarProducts = [
-    {
-      id: 2,
-      name: "Buffalo Milk",
-      price: 65,
-      image: "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=300&h=300&fit=crop",
-      rating: 4.6
-    },
-    {
-      id: 3,
-      name: "Pure Ghee",
-      price: 450,
-      unit: "per 500g",
-      image: "https://images.unsplash.com/photo-1589985563557-71d4e5a5c5a5?w=300&h=300&fit=crop",
-      rating: 4.9
-    },
-    {
-      id: 4,
-      name: "Fresh Paneer",
-      price: 120,
-      unit: "per 250g",
-      image: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=300&h=300&fit=crop",
-      rating: 4.7
-    },
-    {
-      id: 5,
-      name: "Organic Curd",
-      price: 45,
-      unit: "per 500g",
-      image: "https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=300&h=300&fit=crop",
-      rating: 4.5
-    }
-  ];
-
+  if (!product) {
+    console.warn('Product not found for id:', id);
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-gray-400">Product not found.</p>
+      </div>
+  );
+}
+  const similarProducts = products.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4);
   const handleQuantityChange = (type) => {
     if (type === 'increment') {
       setQuantity(prev => prev + 1);
@@ -93,7 +49,9 @@ const ProductDetailPage = () => {
     <div className="min-h-screen b">
       <div className="container mx-auto px-4 py-8">
         {/* Back Button */}
-        <button className="flex items-center gap-2 mb-8 text-emerald-400 hover:text-emerald-300 transition-colors group">
+        <button className="flex items-center gap-2 mb-8 text-emerald-400 hover:text-emerald-300 transition-colors group"
+        onClick={() => navigate(-1)}
+        >
           <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
           <span>Back to Products</span>
         </button>
