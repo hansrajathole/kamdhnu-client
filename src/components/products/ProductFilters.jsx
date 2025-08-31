@@ -2,7 +2,7 @@ import React from 'react';
 
 export const ProductFilters = ({ filters, activeFilter, onFilterChange }) => {
   return (
-    <div className="flex flex-wrap gap-3">
+    <div className="flex flex-wrap gap-3 justify-center ">
       {filters.map((filter) => (
         <button
           key={filter}

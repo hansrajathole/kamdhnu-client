@@ -26,7 +26,7 @@ export const Products = () => {
     <section className=" py-16 ">
       <div className="max-w-7xl mx-auto pb-20 ">
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
+        <div className="flex flex-col md:flex-row justify-between  md:items-center mb-12 items-center">
           <h2 className="text-4xl md:text-5xl font-bold text-green-400 mb-6 md:mb-0">
             Our Products
           </h2>
@@ -39,7 +39,7 @@ export const Products = () => {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
           {filteredProducts.map((product) => (
             <ProductCard
               key={product.id}

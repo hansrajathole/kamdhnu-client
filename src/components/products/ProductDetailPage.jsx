@@ -45,6 +45,11 @@ const ProductDetailPage = () => {
     // Add your buy now logic here
   };
 
+
+  const handleSimilarProductClick = (id) => {
+    navigate(`/products/${id}`);
+  };
+
   return (
     <div className="min-h-screen b">
       <div className="container mx-auto px-4 py-8">
@@ -222,12 +227,14 @@ const ProductDetailPage = () => {
               <div key={similarProduct.id} className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-emerald-400/50 transition-all group cursor-pointer">
                 <div className="relative mb-4">
                   <img 
-                    src={similarProduct.image} 
+                    src={similarProduct.images[0]} 
                     alt={similarProduct.name}
                     className="w-full h-48 object-cover rounded-xl group-hover:scale-105 transition-transform"
                   />
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-emerald-400 transition-colors">
+                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-emerald-400 transition-colors"
+                onClick={() => handleSimilarProductClick(similarProduct.id)}
+                >
                   {similarProduct.name}
                 </h3>
                 <div className="flex items-center gap-2 mb-3">
