@@ -29,12 +29,12 @@ const Footer = () => {
             <h3 className="text-green-400 font-semibold mb-4">Company</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">
+                <a href="/about" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">
+                <a href="/contact" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">
                   Contact
                 </a>
               </li>
@@ -46,7 +46,7 @@ const Footer = () => {
             <h3 className="text-green-400 font-semibold mb-4">Policies</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">
+                <a href="/policies/privacy" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">
                   Privacy Policy
                 </a>
               </li>

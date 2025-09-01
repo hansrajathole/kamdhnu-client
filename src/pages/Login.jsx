@@ -120,7 +120,7 @@ const Login = () => {
           </p>
         </div>
 
-        <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 p-8 shadow-2xl">
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 p-6 shadow-2xl">
           <div className="flex bg-white/10 rounded-xl p-1 mb-8" role="tablist" aria-label="Auth tabs">
             <button
               type="button"

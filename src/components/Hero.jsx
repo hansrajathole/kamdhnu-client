@@ -31,7 +31,9 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-base cursor-pointer">
+            <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-base cursor-pointer"
+            onClick={() => navigate('/login')}
+            >
               Get Started
             </button>
             
