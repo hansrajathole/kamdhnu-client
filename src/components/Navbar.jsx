@@ -9,20 +9,28 @@ const Navbar = () => {
   const [isOpen, setOpen] = useState(false)
   const navigate = useNavigate();
 
-  // Theme toggle effect
+ useEffect(() => {
+    const saved = localStorage.getItem('theme');
+    if (saved) {
+      setIsDark(saved === 'dark');
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setIsDark(true);
+    }
+  }, []);
+
   useEffect(() => {
+    const html = document.documentElement;
     if (isDark) {
-      document.documentElement.classList.add('dark');
-      console.log('Dark mode enabled');
+      html.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
     } else {
-      document.documentElement.classList.remove('dark');
-      console.log('Light mode enabled');
+      html.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
     }
   }, [isDark]);
 
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-  };
+  const toggleTheme = () => setIsDark(v => !v);
+
 
   const navItems = [
     {btn :'Home' , link : "/"},
