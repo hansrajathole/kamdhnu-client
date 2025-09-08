@@ -19,7 +19,7 @@ const App = () => {
 
 
   return (
-    <div className='bg-[#FFFDF6] text-black dark:bg-[#0F1412] dark:text-white'>
+    <div className='bg-[#FFFDF6] text-black '>
       {
         isLoginPage && <Navbar />
       }

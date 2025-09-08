@@ -9,7 +9,7 @@ const Hero = () => {
     <div className="relative h-[600px] flex items-center overflow-hidden rounded-2xl mx-4 mt-6 ">
       {/* Background Image Container */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat rounded-2xl "
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat rounded-2xl h-[90%] mx-auto w-[80%]"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${heroImage}')`
         }}
@@ -31,7 +31,7 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-base cursor-pointer"
+            <button className="bg-accent  text-black font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-base cursor-pointer"
             onClick={() => navigate('/login')}
             >
               Get Started

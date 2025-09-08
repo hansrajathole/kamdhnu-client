@@ -45,14 +45,14 @@ const SubscriptionPlans = () => {
     const location = useLocation();
 
   return (
-    <section className="bg-[#141A17] pt-16 ">
+    <section className="bg-[#F0F0F0] pt-16 text-primary">
       <div className="max-w-7xl mx-auto px-4 pb-20">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-[#386641] mb-4">
             Subscription Plans
           </h2>
-          <p className="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className=" text-lg max-w-3xl mx-auto leading-relaxed">
             Choose a plan that fits your routine. Pause or modify anytime with our flexible delivery options.
           </p>
         </div>
@@ -62,7 +62,7 @@ const SubscriptionPlans = () => {
           {plans.map((plan) => (
             <div
               key={plan.id}
-              className={`relative bg-[#0D1210] rounded-2xl p-8 border transition-all duration-300 hover:transform hover:scale-105 ${
+              className={`relative bg-[#FFFFFF] rounded-2xl p-8 border transition-all duration-300 hover:transform hover:scale-105 ${
                 plan.isPopular 
                   ? 'border-yellow-500 shadow-xl shadow-yellow-100/5' 
                   : 'border-gray-700 hover:border-gray-600'
@@ -83,11 +83,11 @@ const SubscriptionPlans = () => {
                   {plan.title}
                 </h3>
                 <div className="mb-2">
-                  <span className="text-4xl md:text-5xl font-bold text-white">
+                  <span className="text-4xl md:text-5xl font-bold  text-charcoal/90 ">
                     {plan.price}
                   </span>
                 </div>
-                <p className="text-gray-400 text-sm">
+                <p className=" text-sm">
                   {plan.period}
                 </p>
               </div>

@@ -23,7 +23,7 @@ export const Products = () => {
   };
 
   return (
-    <section className=" py-16 ">
+    <section className=" px-42 ">
       <div className="max-w-7xl mx-auto pb-20 ">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between  md:items-center mb-12 items-center">

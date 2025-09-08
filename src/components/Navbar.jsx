@@ -1,35 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { Sun, Moon, ShoppingCart } from 'lucide-react';
+import React, { useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Spin as Hamburger } from 'hamburger-react'
 
 const Navbar = () => {
-  const [isDark, setIsDark] = useState(false);
+
   const [activeLink, setActiveLink] = useState('Home');
   const [isOpen, setOpen] = useState(false)
   const navigate = useNavigate();
 
- useEffect(() => {
-    const saved = localStorage.getItem('theme');
-    if (saved) {
-      setIsDark(saved === 'dark');
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setIsDark(true);
-    }
-  }, []);
 
-  useEffect(() => {
-    const html = document.documentElement;
-    if (isDark) {
-      html.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      html.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  }, [isDark]);
 
-  const toggleTheme = () => setIsDark(v => !v);
 
 
   const navItems = [
@@ -51,8 +31,8 @@ const Navbar = () => {
             <div className="flex items-center gap-2 cursor-pointer"
             onClick={() => navigate('/')}
             >
-              <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">K</span>
+              <div className="w-8 h-8 border border-gold place-items-center rounded-lg flex items-center justify-center">
+                <span className="text-accent font-semibold">K</span>
               </div>
               <span className="text-xl font-semibold text-[#386641]">
                 Kamdhnu
@@ -74,32 +54,17 @@ const Navbar = () => {
                 >
                   {item.btn}
                   {activeLink === item.btn && (
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-orange-600 dark:bg-yellow-400 transform origin-left"></div>
+                    <div className={`text-sm md:text-base text-charcoal hover:text-accent transition-colors ${
+          activeLink ? "nav-active text-accent" : ""
+        }`}></div>
                   )}
                 </button>
               ))}
             </div>
             {/* Right Actions */}
             <div className="flex items-center gap-4">
-              {/* Theme Toggle */}
-              <button
-                onClick={toggleTheme}
-                className="p-2 rounded-lg   transition-colors duration-200"
-                aria-label="Toggle theme"
-              >
-                {isDark ? (
-                  <Sun className="w-5 h-5 text-yellow-500" />
-                ) : (
-                  <Moon className="w-5 h-5 text-white" />
-                )}
-              </button>
 
-              <button
-              onClick={() => navigate('/cart')}
-              className="relative p-2 rounded-lg transition-colors duration-200 "
-            >
-              <ShoppingCart className="w-5 h-5" />
-            </button>
+             
 
 
 

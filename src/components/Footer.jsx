@@ -3,7 +3,7 @@ import { Phone, Mail, Facebook, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0F1412] text-white py-12 px-4 border-t border-amber-300" >
+    <footer className=" py-12 px-4 border-t border-amber-300" >
           
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content */}
@@ -19,7 +19,7 @@ const Footer = () => {
                 Kamdhnu
               </span>
             </div>
-            <p className="text-gray-300 text-sm leading-relaxed">
+            <p className="text-charcoal/90 text-sm leading-relaxed">
               Premium dairy products delivered fresh to your home.
             </p>
           </div>
@@ -27,14 +27,14 @@ const Footer = () => {
           {/* Company Links */}
           <div>
             <h3 className="text-green-400 font-semibold mb-4">Company</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3 text-charcoal/90">
               <li>
-                <a href="/about" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">
+                <a href="/about" className=" transition-colors duration-200 text-sm">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="/contact" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">
+                <a href="/contact" className=" transition-colors duration-200 text-sm hover:border-b-2 border-amber-300">
                   Contact
                 </a>
               </li>

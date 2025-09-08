@@ -43,6 +43,9 @@ export const CartProvider = ({ children }) => {
     return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
   };
 
+
+  const [Dark, setDark] = useState(false);
+
   return (
     <CartContext.Provider value={{
       cartItems,
@@ -50,7 +53,9 @@ export const CartProvider = ({ children }) => {
       removeFromCart,
       updateQuantity,
       getTotalItems,
-      getTotalPrice
+      getTotalPrice,
+      Dark,
+      setDark
     }}>
       {children}
     </CartContext.Provider>

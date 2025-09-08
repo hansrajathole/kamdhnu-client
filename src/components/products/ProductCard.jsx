@@ -3,7 +3,7 @@ import React from 'react';
 export const ProductCard = ({ product, onAddToCart, onViewDetails }) => {
   
   return (
-    <div className=" rounded-2xl p-4 border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:transform hover:scale-105">
+    <div className=" rounded-2xl p-4 shadow duration-300 hover:transform bg-card border border-gold/30 hover:shadow-md transition-shadow ">
       {/* Product Title */}
       <h3 className="text-green-400 text-xl font-semibold mb-4">
         {product.name}
